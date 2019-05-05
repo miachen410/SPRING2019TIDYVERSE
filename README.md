@@ -70,3 +70,6 @@ I decided to do my tidyverse assignment on the tibbles package. The rmarkdown co
 
 ### Isabel R.
 I will focus on how to use the `Nest` and `Unnest` functions utilizing data from *FiveThirtyEight*,"How Popular Is Donald Trump?" from the trump-approval-ratings data set. The rmarkdown code has been posted to this repository and the html file can be found here: http://rpubs.com/IsabelR/TidyVerseAssignment
+
+### Mia Chen
+Using ggplot2, dplyr, readr packages, and the `bad-drivers` dataset from fivethirtyeight.com, I analyzed the car insurance premiums across different states. The Rmd file has been posted to this repository and the html file can be found here: http://rpubs.com/MiaC/DATA_607_TidyVerse
