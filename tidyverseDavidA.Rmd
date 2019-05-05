@@ -91,3 +91,15 @@ In this section, I am using ggplot to create a basic scatterplot as it is one of
 ggplot(avg.rent.byzip, aes(x=Zip_Code, y=AvgRent)) + geom_point()
 ggplot(avg.rent.bystate, aes(x=avg.rent.bystate$State_Name,y=AvgRent)) + geom_point() + theme(axis.text.x = element_text(angle = 90)) + xlab("State Name") + ylab("Average Rent")
 ```
+
+# Extend this example
+
+Based on David's example, I added a bar plot to demonstrate the average rent ranking from the highest to the lowest across the states. 
+
+```{r}
+ggplot(avg.rent.bystate, aes(x=reorder(State_Name, -AvgRent), y=AvgRent)) + 
+  geom_bar(stat = "identity") + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
+  xlab("State Name") + 
+  ylab("Average Rent")
+```
