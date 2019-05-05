@@ -1,0 +1,33 @@
+---
+title: "TidyVerse Recipe"
+author: "Mia Chen"
+date: "May 5, 2019"
+output: html_document
+---
+
+In this assignment, we will practice collaborating around a code project with Github as a class.
+
+Using several TidyVerse packages, and the bad-drivers dataset from fivethirtyeight.com, I'm going to create a programming sample "vignette" that demonstrates how to use the capabilities of ggplot2, dplyr, readr packages with the bad-drivers dataset.
+
+## Load TidyVerse
+```{r}
+library(tidyverse)
+```
+
+## Using readr to read data from a csv file
+```{r}
+drivers <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/bad-drivers/bad-drivers.csv")
+```
+
+```{r}
+head(drivers)
+```
+
+## Using ggplot2 to visualizae data; with pipe operation %>% from dplyr 
+```{r}
+drivers %>% ggplot(aes(x=reorder(State, -`Car Insurance Premiums ($)`), y=`Car Insurance Premiums ($)`, fill=State)) + 
+  geom_bar(stat = "identity") + 
+  guides(fill = FALSE) +
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+```
+
